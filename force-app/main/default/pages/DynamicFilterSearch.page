@@ -1,0 +1,26 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="true" docType="html-5.0">
+<html>
+<head>
+    <apex:includeLightning />
+    <style>
+        body { margin: 0; padding: 0; }
+        #lwc-container { height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="lwc-container"></div>
+    <script>
+        $Lightning.use("c:DynamicFilterSearchApp", function() {
+            $Lightning.createComponent(
+                "c:DynamicFilterSearchContainer",
+                {},
+                "lwc-container",
+                function(cmp) {
+                    console.log("DynamicFilterSearchContainer loaded");
+                }
+            );
+        });
+    </script>
+</body>
+</html>
+</apex:page>

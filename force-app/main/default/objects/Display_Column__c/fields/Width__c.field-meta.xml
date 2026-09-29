@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Width__c</fullName>
+    <label>Width</label>
+    <description>Column width in pixels for the results datatable</description>
+    <inlineHelpText>Specify the column width in pixels (e.g., 150). Leave blank to use auto width.</inlineHelpText>
+    <type>Number</type>
+    <precision>4</precision>
+    <scale>0</scale>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

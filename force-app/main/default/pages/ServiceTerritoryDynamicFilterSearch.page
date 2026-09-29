@@ -1,0 +1,30 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="true" docType="html-5.0">
+<html>
+<head>
+    <apex:includeLightning />
+    <style>
+        body { margin: 0; padding: 0; background: transparent; }
+        #launcher-container { min-height: 1px; }
+    </style>
+</head>
+<body>
+    <div id="launcher-container"></div>
+    <script>
+        $Lightning.use("c:DynamicFilterSearchApp", function() {
+            $Lightning.createComponent(
+                "c:dynamicFilterSearch",
+                { configurationName: "ServiceTerritory", embeddedMode: true },
+                "launcher-container",
+                function(cmp, status, errorMessage) {
+                    if (status !== "SUCCESS") {
+                        console.error("dynamicFilterSearch failed to load:", errorMessage);
+                        document.getElementById("launcher-container").textContent =
+                            "Error al cargar el buscador: " + errorMessage;
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dispatcher_Pinned_Ids__c</fullName>
+    <label>Dispatcher Pinned Ids</label>
+    <description>Stores concatenated User IDs (separated by semicolons) of dispatchers who have pinned this Service Appointment from the dynamic search component. Supports multiple dispatchers simultaneously.</description>
+    <inlineHelpText>Contains the IDs of dispatchers who have selected this appointment for their Dispatcher Console view. Managed automatically by the dynamic search component.</inlineHelpText>
+    <type>Text</type>
+    <length>255</length>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

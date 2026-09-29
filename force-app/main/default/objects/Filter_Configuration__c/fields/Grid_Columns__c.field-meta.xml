@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grid_Columns__c</fullName>
+    <label>Grid Columns</label>
+    <description>Number of columns in the search field grid layout</description>
+    <inlineHelpText>Specify how many columns the filter grid should have (e.g., 3 for a 3-column layout). Rows will be calculated automatically based on the number of fields.</inlineHelpText>
+    <type>Number</type>
+    <precision>2</precision>
+    <scale>0</scale>
+    <required>true</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

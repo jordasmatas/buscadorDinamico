@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Label__c</fullName>
+    <label>Label</label>
+    <description>Descriptive name for this filter configuration to identify its purpose</description>
+    <inlineHelpText>Enter a descriptive name that helps users understand what this filter configuration is for (e.g., "Service Appointment Search", "Account Filter")</inlineHelpText>
+    <type>Text</type>
+    <length>255</length>
+    <required>true</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

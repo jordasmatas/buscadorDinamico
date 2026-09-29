@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multi_Search_Separator__c</fullName>
+    <label>Multi Search Separator</label>
+    <description>Character used to separate values in multi-search (e.g., space, comma, semicolon)</description>
+    <inlineHelpText>Enter the character that will separate multiple search values. Default is space if not specified.</inlineHelpText>
+    <type>Text</type>
+    <length>5</length>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

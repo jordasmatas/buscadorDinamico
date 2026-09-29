@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Label__c</fullName>
+    <label>Field Label</label>
+    <description>The column header label to display in the results table</description>
+    <inlineHelpText>Enter the label that will appear as the column header (e.g., "Appointment Number", "Status")</inlineHelpText>
+    <type>Text</type>
+    <length>255</length>
+    <required>true</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

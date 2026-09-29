@@ -1,0 +1,18 @@
+.field-config-item {
+    cursor: move;
+    transition: all 0.2s ease;
+    border-left: 3px solid #0070d2;
+}
+
+.field-config-item:hover {
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.field-config-item:active {
+    opacity: 0.5;
+}
+
+lightning-dual-listbox {
+    min-height: 300px;
+}

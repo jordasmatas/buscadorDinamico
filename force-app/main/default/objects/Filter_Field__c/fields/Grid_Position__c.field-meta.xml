@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grid_Position__c</fullName>
+    <label>Grid Position</label>
+    <description>The position of this field in the grid layout (1-based index)</description>
+    <inlineHelpText>Enter the position where this field should appear in the grid (e.g., 1 for first position, 2 for second, etc.)</inlineHelpText>
+    <type>Number</type>
+    <precision>3</precision>
+    <scale>0</scale>
+    <required>true</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

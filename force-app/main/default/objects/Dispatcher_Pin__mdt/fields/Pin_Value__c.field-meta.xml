@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pin_Value__c</fullName>
+    <label>Pin Value</label>
+    <description>Unique decimal number assigned to this dispatcher. Written as ;N; in Dispatcher_Pinned_Ids__c so a contains search for ;10; never matches ;100; or ;108;.</description>
+    <type>Number</type>
+    <precision>6</precision>
+    <scale>0</scale>
+    <required>true</required>
+    <unique>true</unique>
+    <externalId>false</externalId>
+</CustomField>

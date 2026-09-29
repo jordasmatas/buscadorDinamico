@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Busqueda_avanzada</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Búsqueda avanzada</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>https://storm-ac6a2c00af9856--c.vf.force.com/apex/ServiceTerritoryDynamicFilterSearch</url>
+</WebLink>

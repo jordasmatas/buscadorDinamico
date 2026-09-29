@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Buscador Dinámico</label>
+        <name>DFS_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Configuración de Búsqueda</label>
+        <name>DFS_SearchConfiguration</name>
+    </customLabels>
+    <customLabels>
+        <label>Selecciona una configuración</label>
+        <name>DFS_SelectConfiguration</name>
+    </customLabels>
+    <customLabels>
+        <label>Buscar</label>
+        <name>DFS_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Buscar y enviar</label>
+        <name>DFS_SearchAndSend</name>
+    </customLabels>
+    <customLabels>
+        <label>Limpiar</label>
+        <name>DFS_Clear</name>
+    </customLabels>
+    <customLabels>
+        <label>Limpiar Resultados Pasados</label>
+        <name>DFS_ClearPastResults</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccionar rango...</label>
+        <name>DFS_SelectRange</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha inicio</label>
+        <name>DFS_StartDate</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha fin</label>
+        <name>DFS_EndDate</name>
+    </customLabels>
+    <customLabels>
+        <label>Hora inicio</label>
+        <name>DFS_StartTime</name>
+    </customLabels>
+    <customLabels>
+        <label>Hora fin</label>
+        <name>DFS_EndTime</name>
+    </customLabels>
+    <customLabels>
+        <label>Aplicar</label>
+        <name>DFS_Apply</name>
+    </customLabels>
+    <customLabels>
+        <label>Limpiar selección</label>
+        <name>DFS_ClearSelection</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccionar...</label>
+        <name>DFS_SelectPlaceholder</name>
+    </customLabels>
+    <customLabels>
+        <label>Advertencia</label>
+        <name>DFS_Warning</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, selecciona una configuración de búsqueda.</label>
+        <name>DFS_SelectConfigMessage</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando...</label>
+        <name>DFS_Loading</name>
+    </customLabels>
+    <customLabels>
+        <label>Registros por página</label>
+        <name>DFS_RecordsPerPage</name>
+    </customLabels>
+    <customLabels>
+        <label>Anterior</label>
+        <name>DFS_Previous</name>
+    </customLabels>
+    <customLabels>
+        <label>Siguiente</label>
+        <name>DFS_Next</name>
+    </customLabels>
+    <customLabels>
+        <label>Página {0} de {1}</label>
+        <name>DFS_PageOf</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron registros con los filtros aplicados.</label>
+        <name>DFS_NoResultsFound</name>
+    </customLabels>
+    <customLabels>
+        <label>Aplica filtros y haz clic en "Buscar" para ver resultados.</label>
+        <name>DFS_ApplyFiltersMessage</name>
+    </customLabels>
+    <customLabels>
+        <label>Búsqueda Avanzada</label>
+        <name>DFS_ShowAdvancedSearch</name>
+    </customLabels>
+    <customLabels>
+        <label>Ocultar Búsqueda Avanzada</label>
+        <name>DFS_HideAdvancedSearch</name>
+    </customLabels>
+    <customLabels>
+        <label>Enviar al Dispatcher</label>
+        <name>DFS_SendToDispatcher</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} registro(s) encontrado(s)</label>
+        <name>DFS_RecordsFound</name>
+    </customLabels>
+    <customLabels>
+        <label>espacio</label>
+        <name>DFS_SeparatorSpace</name>
+    </customLabels>
+    <customLabels>
+        <label>(separador {0})</label>
+        <name>DFS_SeparatorLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, selecciona una configuración primero.</label>
+        <name>DFS_SelectConfigFirst</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} registros encontrados</label>
+        <name>DFS_RecordsFoundToast</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtros limpiados</label>
+        <name>DFS_FiltersCleared</name>
+    </customLabels>
+    <customLabels>
+        <label>Selecciona al menos un registro para enviar al Dispatcher.</label>
+        <name>DFS_SelectAtLeastOneRecord</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} Service Appointment(s) enviadas al Dispatcher.</label>
+        <name>DFS_SentToDispatcher</name>
+    </customLabels>
+    <customLabels>
+        <label>Error al enviar al Dispatcher: {0}</label>
+        <name>DFS_ErrorSendingDispatcher</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron registros para enviar.</label>
+        <name>DFS_NoRecordsToSend</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} Service Appointment(s) encontradas y enviadas al Dispatcher.</label>
+        <name>DFS_FoundAndSent</name>
+    </customLabels>
+    <customLabels>
+        <label>Error en buscar y enviar: {0}</label>
+        <name>DFS_ErrorSearchAndSend</name>
+    </customLabels>
+    <customLabels>
+        <label>Se limpiaron {0} Service Appointment(s) del Dispatcher.</label>
+        <name>DFS_ClearedFromDispatcher</name>
+    </customLabels>
+    <customLabels>
+        <label>Error al limpiar: {0}</label>
+        <name>DFS_ErrorClearing</name>
+    </customLabels>
+    <!-- Filter Configuration Builder -->
+    <customLabels>
+        <label>Configuraciones de Filtro</label>
+        <name>FCB_FilterConfigurations</name>
+    </customLabels>
+    <customLabels>
+        <label>Nueva Configuración</label>
+        <name>FCB_NewConfiguration</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre</label>
+        <name>FCB_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Etiqueta</label>
+        <name>FCB_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Objeto</label>
+        <name>FCB_Object</name>
+    </customLabels>
+    <customLabels>
+        <label>Activo</label>
+        <name>FCB_Active</name>
+    </customLabels>
+    <customLabels>
+        <label>Acciones</label>
+        <name>FCB_Actions</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar</label>
+        <name>FCB_Edit</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar</label>
+        <name>FCB_Delete</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron configuraciones. Crea tu primera configuración para empezar.</label>
+        <name>FCB_NoConfigurations</name>
+    </customLabels>
+    <customLabels>
+        <label>Nueva Configuración</label>
+        <name>FCB_NewConfigTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar Configuración</label>
+        <name>FCB_EditConfigTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Volver</label>
+        <name>FCB_Back</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardar</label>
+        <name>FCB_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Información Básica</label>
+        <name>FCB_BasicInformation</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de Configuración</label>
+        <name>FCB_ConfigurationName</name>
+    </customLabels>
+    <customLabels>
+        <label>Columnas de Cuadrícula</label>
+        <name>FCB_GridColumns</name>
+    </customLabels>
+    <customLabels>
+        <label>Objeto y Campos</label>
+        <name>FCB_ObjectAndFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccionar Objeto</label>
+        <name>FCB_SelectObject</name>
+    </customLabels>
+    <customLabels>
+        <label>Elige un objeto</label>
+        <name>FCB_ChooseObject</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccionar Campos</label>
+        <name>FCB_SelectFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Campos Disponibles</label>
+        <name>FCB_AvailableFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Campos Seleccionados</label>
+        <name>FCB_SelectedFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Añadir Campos</label>
+        <name>FCB_AddFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Configurar Campos de Filtro (Arrastra para Reordenar)</label>
+        <name>FCB_ConfigureFilterFields</name>
+    </customLabels>
+    <customLabels>
+        <label>Multi-Búsqueda</label>
+        <name>FCB_MultiSearch</name>
+    </customLabels>
+    <customLabels>
+        <label>Carácter Separador</label>
+        <name>FCB_SeparatorCharacter</name>
+    </customLabels>
+    <customLabels>
+        <label>Espacio, coma, punto y coma, etc.</label>
+        <name>FCB_SeparatorPlaceholder</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar</label>
+        <name>FCB_Remove</name>
+    </customLabels>
+    <customLabels>
+        <label>Prefiltro (Opcional)</label>
+        <name>FCB_Prefilter</name>
+    </customLabels>
+    <customLabels>
+        <label>Habilitar Prefiltro</label>
+        <name>FCB_EnablePrefilter</name>
+    </customLabels>
+    <customLabels>
+        <label>Campo de Prefiltro (Picklist)</label>
+        <name>FCB_PrefilterField</name>
+    </customLabels>
+    <customLabels>
+        <label>Selecciona un campo picklist</label>
+        <name>FCB_SelectPicklistField</name>
+    </customLabels>
+    <customLabels>
+        <label>Valores de Prefiltro</label>
+        <name>FCB_PrefilterValues</name>
+    </customLabels>
+    <customLabels>
+        <label>Valores Disponibles</label>
+        <name>FCB_AvailableValues</name>
+    </customLabels>
+    <customLabels>
+        <label>Valores Seleccionados</label>
+        <name>FCB_SelectedValues</name>
+    </customLabels>
+    <customLabels>
+        <label>Acciones Masivas (Opcional)</label>
+        <name>FCB_BulkActions</name>
+    </customLabels>
+    <customLabels>
+        <label>Añadir Acción Masiva</label>
+        <name>FCB_AddBulkAction</name>
+    </customLabels>
+    <customLabels>
+        <label>Etiqueta de Acción</label>
+        <name>FCB_ActionLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Tipo de Acción</label>
+        <name>FCB_ActionType</name>
+    </customLabels>
+    <customLabels>
+        <label>Clase Apex</label>
+        <name>FCB_ApexClass</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre API del Flow</label>
+        <name>FCB_FlowApiName</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre del Icono (ej., utility:check)</label>
+        <name>FCB_IconName</name>
+    </customLabels>
+    <customLabels>
+        <label>Orden</label>
+        <name>FCB_Order</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando</label>
+        <name>FCB_Loading</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Estás seguro de que quieres eliminar esta configuración?</label>
+        <name>FCB_ConfirmDelete</name>
+    </customLabels>
+    <customLabels>
+        <label>Configuración eliminada correctamente</label>
+        <name>FCB_ConfigDeleted</name>
+    </customLabels>
+    <customLabels>
+        <label>Configuración guardada correctamente</label>
+        <name>FCB_ConfigSaved</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontró el FieldSet "DynamicSearch" en el objeto seleccionado. Créelo manualmente para poder seleccionar campos.</label>
+        <name>FCB_NoFieldSet</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, selecciona al menos un campo</label>
+        <name>FCB_SelectOneField</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduce un nombre de configuración</label>
+        <name>FCB_EnterConfigName</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduce una etiqueta de configuración</label>
+        <name>FCB_EnterConfigLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, selecciona un objeto</label>
+        <name>FCB_SelectAnObject</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, añade al menos un campo de filtro</label>
+        <name>FCB_AddOneField</name>
+    </customLabels>
+</Translations>

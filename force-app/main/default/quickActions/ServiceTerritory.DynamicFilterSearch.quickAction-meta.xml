@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Abre la búsqueda avanzada de Dynamic Filter Search para Service Territory</description>
+    <label>Búsqueda avanzada</label>
+    <lightningComponent>c:DynamicFilterSearchServiceTerritoryAction</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+</QuickAction>

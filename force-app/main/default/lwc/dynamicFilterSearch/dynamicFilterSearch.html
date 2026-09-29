@@ -1,0 +1,534 @@
+<template>
+    <lightning-card title={title} icon-name="standard:search">
+        <div class="slds-m-around_medium">
+            <!-- Toggle Button: only shown when NOT in embedded mode -->
+            <template if:true={showToggleButton}>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button
+                        variant="brand"
+                        label={toggleButtonLabel}
+                        icon-name={toggleButtonIcon}
+                        onclick={handleToggleSearch}>
+                    </lightning-button>
+                </div>
+            </template>
+
+            <!-- Search Panel Content -->
+            <template if:true={isExpanded}>
+                <div class={searchPanelClass}>
+                    <!-- Configuration Selector: only shown when no configurationId is preset -->
+                    <template if:true={showConfigSelector}>
+                        <div class="slds-m-bottom_medium">
+                            <lightning-combobox
+                                name="configuration"
+                                label={labels.searchConfiguration}
+                                value={selectedConfigId}
+                                placeholder={labels.selectConfiguration}
+                                options={configurationOptions}
+                                onchange={handleConfigurationChange}
+                                required>
+                            </lightning-combobox>
+                        </div>
+                    </template>
+
+                    <!-- Filter Fields Grid -->
+                    <template if:true={hasFilterFields}>
+                        <div class="filter-grid" style={filterGridStyle}>
+                            <template for:each={filterFieldsInRows} for:item="row">
+                                <template key={row.key} for:each={row.fields} for:item="field">
+                                    <div key={field.key} class="slds-col slds-m-bottom_small">
+                                        <!-- Date Range Input -->
+                                        <template if:true={field.isDate}>
+                                            <div class="date-range-wrapper slds-form-element">
+                                                <label class="slds-form-element__label">{field.displayLabel}</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="date-range-trigger slds-input"
+                                                         data-field={field.Field_API_Name__c}
+                                                         data-type="date"
+                                                         onclick={handleDateRangeClick}>
+                                                        <span class="date-range-text">
+                                                            {field.dateRangeDisplay}
+                                                        </span>
+                                                        <lightning-icon icon-name="utility:event" size="x-small" class="date-range-icon"></lightning-icon>
+                                                    </div>
+                                                </div>
+                                                <template if:true={field.isDateRangeOpen}>
+                                                    <div class="date-range-inline-panel slds-box slds-m-top_xx-small">
+                                                        <div class="slds-grid slds-gutters_x-small slds-wrap">
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="date"
+                                                                    label={labels.startDate}
+                                                                    value={field.rangeStartDate}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="startDate"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="date"
+                                                                    label={labels.endDate}
+                                                                    value={field.rangeEndDate}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="endDate"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-grid_align-end slds-m-top_x-small">
+                                                            <lightning-button-icon
+                                                                icon-name="utility:clear"
+                                                                alternative-text={labels.clear}
+                                                                title={labels.clear}
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handleDateRangeInlineClear}
+                                                                class="slds-m-right_xx-small">
+                                                            </lightning-button-icon>
+                                                            <lightning-button-icon
+                                                                icon-name="utility:check"
+                                                                alternative-text={labels.apply}
+                                                                title={labels.apply}
+                                                                variant="brand"
+                                                                data-field={field.Field_API_Name__c}
+                                                                data-type="date"
+                                                                onclick={handleDateRangeInlineApply}>
+                                                            </lightning-button-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                        <!-- DateTime Range Input -->
+                                        <template if:true={field.isDateTime}>
+                                            <div class="date-range-wrapper slds-form-element">
+                                                <label class="slds-form-element__label">{field.displayLabel}</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="date-range-trigger slds-input"
+                                                         data-field={field.Field_API_Name__c}
+                                                         data-type="datetime"
+                                                         onclick={handleDateRangeClick}>
+                                                        <span class="date-range-text">
+                                                            {field.dateRangeDisplay}
+                                                        </span>
+                                                        <lightning-icon icon-name="utility:event" size="x-small" class="date-range-icon"></lightning-icon>
+                                                    </div>
+                                                </div>
+                                                <template if:true={field.isDateRangeOpen}>
+                                                    <div class="date-range-inline-panel slds-box slds-m-top_xx-small">
+                                                        <div class="slds-grid slds-gutters_x-small slds-wrap">
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="date"
+                                                                    label={labels.startDate}
+                                                                    value={field.rangeStartDate}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="startDate"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="time"
+                                                                    label={labels.startTime}
+                                                                    value={field.rangeStartTime}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="startTime"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="date"
+                                                                    label={labels.endDate}
+                                                                    value={field.rangeEndDate}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="endDate"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                            <div class="slds-col slds-size_1-of-2">
+                                                                <lightning-input
+                                                                    type="time"
+                                                                    label={labels.endTime}
+                                                                    value={field.rangeEndTime}
+                                                                    data-field={field.Field_API_Name__c}
+                                                                    data-range-part="endTime"
+                                                                    onchange={handleDateRangePartChange}>
+                                                                </lightning-input>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-grid_align-end slds-m-top_x-small">
+                                                            <lightning-button-icon
+                                                                icon-name="utility:clear"
+                                                                alternative-text={labels.clear}
+                                                                title={labels.clear}
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handleDateRangeInlineClear}
+                                                                class="slds-m-right_xx-small">
+                                                            </lightning-button-icon>
+                                                            <lightning-button-icon
+                                                                icon-name="utility:check"
+                                                                alternative-text={labels.apply}
+                                                                title={labels.apply}
+                                                                variant="brand"
+                                                                data-field={field.Field_API_Name__c}
+                                                                data-type="datetime"
+                                                                onclick={handleDateRangeInlineApply}>
+                                                            </lightning-button-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                        <!-- Picklist Multiselect Input -->
+                                        <template if:true={field.isPicklist}>
+                                            <div class="picklist-wrapper slds-form-element">
+                                                <label class="slds-form-element__label">{field.displayLabel}</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="picklist-trigger slds-input"
+                                                         data-field={field.Field_API_Name__c}
+                                                         onclick={handlePicklistTriggerClick}>
+                                                        <span class="picklist-display-text">
+                                                            {field.picklistDisplay}
+                                                        </span>
+                                                        <lightning-icon icon-name="utility:down" size="x-small" class="picklist-icon"></lightning-icon>
+                                                    </div>
+                                                </div>
+                                                <template if:true={field.isPicklistOpen}>
+                                                    <div class="picklist-options-panel slds-box slds-m-top_xx-small">
+                                                        <div class="picklist-options-list">
+                                                            <template for:each={field.picklistOptions} for:item="opt">
+                                                                <div key={opt.value}
+                                                                     class="picklist-option"
+                                                                     data-field={field.Field_API_Name__c}
+                                                                     data-value={opt.value}
+                                                                     onclick={handlePicklistOptionToggle}>
+                                                                    <lightning-icon
+                                                                        if:true={opt.selected}
+                                                                        icon-name="utility:check"
+                                                                        size="x-small"
+                                                                        class="picklist-check-icon">
+                                                                    </lightning-icon>
+                                                                    <span if:false={opt.selected} class="picklist-check-placeholder"></span>
+                                                                    <span class="picklist-option-label">{opt.label}</span>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                        <div class="slds-grid slds-grid_align-end slds-m-top_x-small slds-border_top slds-p-top_x-small">
+                                                            <lightning-button-icon
+                                                                icon-name="utility:clear"
+                                                                alternative-text={labels.clearSelection}
+                                                                title={labels.clearSelection}
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handlePicklistClear}
+                                                                class="slds-m-right_xx-small">
+                                                            </lightning-button-icon>
+                                                            <lightning-button-icon
+                                                                icon-name="utility:check"
+                                                                alternative-text={labels.apply}
+                                                                title={labels.apply}
+                                                                variant="brand"
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handlePicklistApply}>
+                                                            </lightning-button-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                        <!-- Lookup Multiselect Input -->
+                                        <template if:true={field.isLookup}>
+                                            <div class="lookup-wrapper slds-form-element">
+                                                <label class="slds-form-element__label">{field.displayLabel}</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="lookup-trigger slds-input"
+                                                         data-field={field.Field_API_Name__c}
+                                                         onclick={handleLookupTriggerClick}>
+                                                        <span class="lookup-display-text">
+                                                            {field.lookupDisplay}
+                                                        </span>
+                                                        <lightning-icon icon-name="utility:search" size="x-small" class="lookup-icon"></lightning-icon>
+                                                    </div>
+                                                </div>
+                                                <template if:true={field.isLookupOpen}>
+                                                    <div class="lookup-panel slds-box slds-m-top_xx-small">
+                                                        <!-- Selected tags -->
+                                                        <template if:true={field.lookupSelectedItems.length}>
+                                                            <div class="lookup-tags slds-m-bottom_x-small">
+                                                                <template for:each={field.lookupSelectedItems} for:item="tag">
+                                                                    <span key={tag.value} class="lookup-tag">
+                                                                        <span class="lookup-tag-label">{tag.label}</span>
+                                                                        <button class="lookup-tag-remove"
+                                                                                data-field={field.Field_API_Name__c}
+                                                                                data-value={tag.value}
+                                                                                onclick={handleLookupTagRemove}
+                                                                                title="Remove">✕</button>
+                                                                    </span>
+                                                                </template>
+                                                            </div>
+                                                        </template>
+                                                        <!-- Search input -->
+                                                        <lightning-input
+                                                            type="search"
+                                                            label=""
+                                                            variant="label-hidden"
+                                                            placeholder="Search..."
+                                                            value={field.lookupSearchTerm}
+                                                            data-field={field.Field_API_Name__c}
+                                                            oninput={handleLookupSearchInput}
+                                                            class="lookup-search-input slds-m-bottom_x-small">
+                                                        </lightning-input>
+                                                        <!-- Results list -->
+                                                        <div class="lookup-options-list">
+                                                            <template for:each={field.lookupResults} for:item="opt">
+                                                                <div key={opt.value}
+                                                                     class="picklist-option"
+                                                                     data-field={field.Field_API_Name__c}
+                                                                     data-value={opt.value}
+                                                                     data-label={opt.label}
+                                                                     onclick={handleLookupOptionToggle}>
+                                                                    <lightning-icon
+                                                                        if:true={opt.selected}
+                                                                        icon-name="utility:check"
+                                                                        size="x-small"
+                                                                        class="picklist-check-icon">
+                                                                    </lightning-icon>
+                                                                    <span if:false={opt.selected} class="picklist-check-placeholder"></span>
+                                                                    <span class="picklist-option-label">{opt.label}</span>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                        <!-- Actions -->
+                                                        <div class="slds-grid slds-grid_align-end slds-m-top_x-small slds-border_top slds-p-top_x-small">
+                                                            <lightning-button-icon
+                                                                icon-name="utility:clear"
+                                                                alternative-text={labels.clearSelection}
+                                                                title={labels.clearSelection}
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handleLookupClear}
+                                                                class="slds-m-right_xx-small">
+                                                            </lightning-button-icon>
+                                                            <lightning-button-icon
+                                                                icon-name="utility:check"
+                                                                alternative-text={labels.apply}
+                                                                title={labels.apply}
+                                                                variant="brand"
+                                                                data-field={field.Field_API_Name__c}
+                                                                onclick={handleLookupApply}>
+                                                            </lightning-button-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+
+                                        <!-- Number Input -->
+                                        <template if:true={field.isNumber}>
+                                            <lightning-input
+                                                type="number"
+                                                label={field.displayLabel}
+                                                value={field.value}
+                                                data-field={field.Field_API_Name__c}
+                                                onchange={handleFilterChange}>
+                                            </lightning-input>
+                                        </template>
+
+                                        <!-- Email Input -->
+                                        <template if:true={field.isEmail}>
+                                            <lightning-input
+                                                type="email"
+                                                label={field.displayLabel}
+                                                value={field.value}
+                                                data-field={field.Field_API_Name__c}
+                                                onchange={handleFilterChange}>
+                                            </lightning-input>
+                                        </template>
+
+                                        <!-- Phone Input -->
+                                        <template if:true={field.isPhone}>
+                                            <lightning-input
+                                                type="tel"
+                                                label={field.displayLabel}
+                                                value={field.value}
+                                                data-field={field.Field_API_Name__c}
+                                                onchange={handleFilterChange}>
+                                            </lightning-input>
+                                        </template>
+
+                                        <!-- Checkbox Input -->
+                                        <template if:true={field.isBoolean}>
+                                            <lightning-input
+                                                type="checkbox"
+                                                label={field.displayLabel}
+                                                checked={field.value}
+                                                data-field={field.Field_API_Name__c}
+                                                onchange={handleFilterChange}>
+                                            </lightning-input>
+                                        </template>
+
+                                        <!-- Text Input (default) -->
+                                        <template if:true={field.isText}>
+                                            <lightning-input
+                                                type="text"
+                                                label={field.displayLabel}
+                                                value={field.value}
+                                                data-field={field.Field_API_Name__c}
+                                                onchange={handleFilterChange}>
+                                            </lightning-input>
+                                        </template>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Search Buttons -->
+                    <template if:true={selectedConfigId}>
+                        <div class="slds-m-top_medium">
+                            <lightning-button
+                                variant="brand"
+                                label={labels.search}
+                                icon-name="utility:search"
+                                onclick={handleSearch}
+                                disabled={isLoading}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+                            <lightning-button
+                                variant="brand"
+                                label={labels.searchAndSend}
+                                icon-name="utility:forward"
+                                onclick={handleSearchAndSend}
+                                disabled={isLoading}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+                            <lightning-button
+                                variant="neutral"
+                                label={labels.clear}
+                                icon-name="utility:clear"
+                                onclick={handleClear}
+                                disabled={isLoading}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+                            <lightning-button
+                                variant="destructive-text"
+                                label={labels.clearPastResults}
+                                icon-name="utility:delete"
+                                onclick={handleClearDispatcherFilter}
+                                disabled={isLoading}>
+                            </lightning-button>
+                        </div>
+                    </template>
+
+                    <!-- Configuration Not Selected Message -->
+                    <template if:true={showConfigSelector}>
+                        <template if:false={selectedConfigId}>
+                            <div class="slds-m-bottom_medium">
+                                <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                                    <span class="slds-assistive-text">{labels.warning}</span>
+                                    <h2>{labels.selectConfigMessage}</h2>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <!-- Loading Spinner -->
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text={labels.loading} size="medium"></lightning-spinner>
+                    </template>
+
+                    <!-- Search Results -->
+                    <template if:true={hasResults}>
+                        <div class="slds-m-top_medium">
+                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+                                <div class="slds-col">
+                                    <p class="slds-text-heading_small">{resultsMessage}</p>
+                                </div>
+                                <div class="slds-col slds-no-flex">
+                                    <lightning-button
+                                        variant="brand"
+                                        label={sendToDispatcherLabel}
+                                        icon-name="utility:routing_offline"
+                                        onclick={handleSendToDispatcher}
+                                        disabled={isLoading}
+                                        class="slds-m-right_x-small">
+                                    </lightning-button>
+                                </div>
+                            </div>
+                            <div class="slds-m-bottom_small page-size-container">
+                                <lightning-combobox
+                                    name="pageSize"
+                                    label={labels.recordsPerPage}
+                                    value={pageSizeValue}
+                                    options={pageSizeOptions}
+                                    onchange={handlePageSizeChange}
+                                    variant="label-inline">
+                                </lightning-combobox>
+                            </div>
+                            <lightning-datatable
+                                key-field="Id"
+                                data={paginatedResults}
+                                columns={displayColumns}
+                                selected-rows={selectedRowIds}
+                                onrowselection={handleRowSelection}>
+                            </lightning-datatable>
+                            <template if:true={showPagination}>
+                                <div class="slds-grid slds-grid_align-center slds-m-top_medium">
+                                    <lightning-button
+                                        label={labels.previous}
+                                        icon-name="utility:chevronleft"
+                                        onclick={handlePreviousPage}
+                                        disabled={isFirstPage}
+                                        class="slds-m-right_x-small">
+                                    </lightning-button>
+                                    <span class="slds-align-middle slds-p-horizontal_medium">
+                                        {paginationMessage}
+                                    </span>
+                                    <lightning-button
+                                        label={labels.next}
+                                        icon-name="utility:chevronright"
+                                        icon-position="right"
+                                        onclick={handleNextPage}
+                                        disabled={isLastPage}>
+                                    </lightning-button>
+                                </div>
+                            </template>
+                            <!-- Bottom Dispatcher Button -->
+                            <div class="slds-m-top_medium slds-text-align_right">
+                                <lightning-button
+                                    variant="brand"
+                                    label={sendToDispatcherLabel}
+                                    icon-name="utility:routing_offline"
+                                    onclick={handleSendToDispatcher}
+                                    disabled={isLoading}>
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- No Results Message -->
+                    <template if:false={hasResults}>
+                        <template if:false={isLoading}>
+                            <template if:true={searchPerformed}>
+                                <div class="slds-text-align_center slds-p-around_medium">
+                                    <p class="slds-text-color_weak">{labels.noResultsFound}</p>
+                                </div>
+                            </template>
+                            <template if:false={searchPerformed}>
+                                <template if:true={selectedConfigId}>
+                                    <div class="slds-text-align_center slds-p-around_medium">
+                                        <p class="slds-text-color_weak">{labels.applyFiltersMessage}</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>

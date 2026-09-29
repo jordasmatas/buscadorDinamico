@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global"
+                controller="DynamicFilterController">
+    <aura:attribute name="configurationName" type="String" default=""/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.isLoaded}">
+        <c:dynamicFilterSearch configurationName="{!v.configurationName}" embeddedMode="true"/>
+    </aura:if>
+</aura:component>

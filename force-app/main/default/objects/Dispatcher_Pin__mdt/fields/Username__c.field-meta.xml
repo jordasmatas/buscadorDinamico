@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Username__c</fullName>
+    <label>Username</label>
+    <description>Salesforce username of the dispatcher (e.g. jdoe@company.com). Used to look up the pin value at dispatch time.</description>
+    <type>Text</type>
+    <length>255</length>
+    <required>true</required>
+    <unique>true</unique>
+    <externalId>false</externalId>
+</CustomField>

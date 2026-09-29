@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Icon_Name__c</fullName>
+    <label>Icon Name</label>
+    <description>SLDS icon name for the bulk action button</description>
+    <inlineHelpText>Enter the SLDS icon name to display on the button (e.g., utility:user, utility:edit). Leave blank for no icon.</inlineHelpText>
+    <type>Text</type>
+    <length>100</length>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

@@ -1,0 +1,329 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <!-- Configuration List View -->
+            <template if:true={showConfigList}>
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div class="slds-page-header">
+                            <div class="slds-page-header__row">
+                                <div class="slds-page-header__col-title">
+                                    <div class="slds-media">
+                                        <div class="slds-media__body">
+                                            <h1 class="slds-page-header__title">{labels.filterConfigurations}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-page-header__col-actions">
+                                    <lightning-button variant="brand" label={labels.newConfiguration}
+                                                      icon-name="utility:add" onclick={handleNewConfig}>
+                                    </lightning-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <template if:true={configurations.length}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">{labels.name}</div></th>
+                                <th scope="col"><div class="slds-truncate">{labels.label}</div></th>
+                                <th scope="col"><div class="slds-truncate">{labels.object}</div></th>
+                                <th scope="col"><div class="slds-truncate">{labels.active}</div></th>
+                                <th scope="col"><div class="slds-truncate">{labels.actions}</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={configurations} for:item="config">
+                                <tr key={config.Id}>
+                                    <td><div class="slds-truncate">{config.Name}</div></td>
+                                    <td><div class="slds-truncate">{config.Label__c}</div></td>
+                                    <td><div class="slds-truncate">{config.Object_API_Name__c}</div></td>
+                                    <td>
+                                        <template if:true={config.Active__c}>
+                                            <lightning-icon icon-name="utility:success"
+                                                            size="x-small" alternative-text={labels.active}>
+                                            </lightning-icon>
+                                        </template>
+                                    </td>
+                                    <td>
+                                        <lightning-button-menu alternative-text={labels.actions} icon-size="x-small">
+                                            <lightning-menu-item value="edit" label={labels.edit} data-id={config.Id}
+                                                                 onclick={handleEditConfig}>
+                                            </lightning-menu-item>
+                                            <lightning-menu-item value="delete" label={labels.delete} data-id={config.Id}
+                                                                 onclick={handleDeleteConfig}>
+                                            </lightning-menu-item>
+                                        </lightning-button-menu>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <template if:false={configurations.length}>
+                    <div class="slds-text-align_center slds-p-around_large">
+                        <p>{labels.noConfigurations}</p>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Configuration Form View -->
+            <template if:true={showConfigForm}>
+                <div class="slds-page-header slds-m-bottom_medium">
+                    <div class="slds-page-header__row">
+                        <div class="slds-page-header__col-title">
+                            <h1 class="slds-page-header__title">{configFormTitle}</h1>
+                        </div>
+                        <div class="slds-page-header__col-actions">
+                            <lightning-button label={labels.back} onclick={handleBackToList}></lightning-button>
+                            <lightning-button variant="brand" label={labels.save} onclick={handleSave}
+                                              class="slds-m-left_x-small">
+                            </lightning-button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basic Configuration Section -->
+                <lightning-card title={labels.basicInformation} icon-name="standard:settings">
+                    <div class="slds-p-around_medium">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input label={labels.configurationName} value={configName}
+                                                 onchange={handleInputChange} data-field="configName" required>
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input label={labels.label} value={configLabel}
+                                                 onchange={handleInputChange} data-field="configLabel" required>
+                                </lightning-input>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters slds-m-top_small">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input type="number" label={labels.gridColumns} value={gridColumns}
+                                                 onchange={handleInputChange} data-field="gridColumns"
+                                                 min="1" max="4" required>
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input type="checkbox" label={labels.active} checked={isActive}
+                                                 onchange={handleInputChange} data-field="isActive">
+                                </lightning-input>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+
+                <!-- Object and Fields Selection -->
+                <lightning-card title={labels.objectAndFields} icon-name="standard:entity" class="slds-m-top_medium">
+                    <div class="slds-p-around_medium">
+                        <lightning-combobox label={labels.selectObject} value={selectedObject}
+                                            placeholder={labels.chooseObject} options={objectOptions}
+                                            onchange={handleObjectChange} required>
+                        </lightning-combobox>
+
+                        <template if:true={showFieldSelector}>
+                            <div class="slds-m-top_medium">
+                                <lightning-dual-listbox label={labels.selectFields} source-label={labels.availableFields}
+                                                        selected-label={labels.selectedFields} options={fieldOptions}
+                                                        value={selectedFields} onchange={handleFieldSelection}>
+                                </lightning-dual-listbox>
+                                <lightning-button variant="brand" label={labels.addFields} onclick={handleAddFields}
+                                                  class="slds-m-top_small">
+                                </lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-card>
+
+                <!-- Configured Fields with Drag and Drop -->
+                <template if:true={hasConfiguredFields}>
+                    <lightning-card title={labels.configureFilterFields}
+                                    icon-name="standard:work_order_item" class="slds-m-top_medium">
+                        <div class="slds-p-around_medium">
+                            <template for:each={configuredFields} for:item="field">
+                                <div key={field.key} class="field-config-item slds-box slds-m-bottom_small"
+                                     draggable="true" data-key={field.key} ondragstart={handleFieldDragStart}
+                                     ondragover={handleFieldDragOver} ondrop={handleFieldDrop}>
+                                    <div class="slds-grid slds-gutters slds-wrap">
+                                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_x-small">
+                                            <div class="slds-grid">
+                                                <div class="slds-col">
+                                                    <strong>#{field.orderNumber}</strong> - {field.fieldLabel}
+                                                    ({field.fieldApiName})
+                                                </div>
+                                                <div class="slds-col_bump-left">
+                                                    <lightning-button-icon icon-name="utility:delete"
+                                                                           alternative-text={labels.remove}
+                                                                           variant="bare" size="small"
+                                                                           data-key={field.key}
+                                                                           onclick={handleRemoveField}>
+                                                    </lightning-button-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-3">
+                                            <lightning-input type="checkbox" label={labels.multiSearch}
+                                                             checked={field.isMultiSearch}
+                                                             data-key={field.key} data-field="isMultiSearch"
+                                                             onchange={handleFieldConfigChange}>
+                                            </lightning-input>
+                                        </div>
+                                        <template if:true={field.isMultiSearch}>
+                                            <div class="slds-col slds-size_2-of-3">
+                                                <lightning-input label={labels.separatorCharacter}
+                                                                 value={field.multiSearchSeparator}
+                                                                 data-key={field.key}
+                                                                 data-field="multiSearchSeparator"
+                                                                 onchange={handleFieldConfigChange}
+                                                                 max-length="5"
+                                                                 placeholder={labels.separatorPlaceholder}>
+                                                </lightning-input>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </lightning-card>
+                </template>
+
+                <!-- Prefilter Section -->
+                <lightning-card title={labels.prefilter} icon-name="standard:filter" class="slds-m-top_medium">
+                    <div class="slds-p-around_medium">
+                        <lightning-input type="checkbox" label={labels.enablePrefilter}
+                                         checked={prefilterEnabled}
+                                         onchange={handlePrefilterEnabledChange}>
+                        </lightning-input>
+
+                        <template if:true={prefilterEnabled}>
+                            <div class="slds-grid slds-gutters slds-m-top_small">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-combobox label={labels.prefilterField}
+                                                        value={prefilterField}
+                                                        placeholder={labels.selectPicklistField}
+                                                        options={picklistFieldOptions}
+                                                        onchange={handlePrefilterFieldChange}
+                                                        required>
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                            <template if:true={prefilterField}>
+                                <div class="slds-m-top_small">
+                                    <lightning-dual-listbox label={labels.prefilterValues}
+                                                            source-label={labels.availableValues}
+                                                            selected-label={labels.selectedValues}
+                                                            options={picklistValueOptions}
+                                                            value={prefilterValues}
+                                                            onchange={handlePrefilterValuesChange}>
+                                    </lightning-dual-listbox>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-card>
+
+                <!-- Bulk Actions Section -->
+                <lightning-card title={labels.bulkActions}
+                                icon-name="standard:actions_and_buttons" class="slds-m-top_medium">
+                    <div class="slds-p-around_medium">
+                        <lightning-button variant="brand" label={labels.addBulkAction}
+                                          onclick={handleAddBulkAction} icon-name="utility:add">
+                        </lightning-button>
+
+                        <template if:true={hasBulkActions}>
+                            <div class="slds-m-top_medium">
+                                <template for:each={bulkActions} for:item="action">
+                                    <div key={action.key} class="slds-box slds-m-bottom_small">
+                                        <div class="slds-grid slds-gutters slds-wrap">
+                                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                                                <div class="slds-grid">
+                                                    <div class="slds-col">
+                                                        <strong>{action.actionLabel}</strong> ({action.actionType})
+                                                    </div>
+                                                    <div class="slds-col_bump-left">
+                                                        <lightning-button-icon icon-name="utility:delete"
+                                                                               alternative-text={labels.remove}
+                                                                               variant="bare" size="small"
+                                                                               data-key={action.key}
+                                                                               onclick={handleRemoveBulkAction}>
+                                                        </lightning-button-icon>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <lightning-input label={labels.actionLabel}
+                                                                 value={action.actionLabel}
+                                                                 data-key={action.key}
+                                                                 data-field="actionLabel"
+                                                                 onchange={handleBulkActionChange} required>
+                                                </lightning-input>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <lightning-combobox label={labels.actionType}
+                                                                    value={action.actionType}
+                                                                    options={actionTypeOptions}
+                                                                    data-key={action.key}
+                                                                    data-field="actionType"
+                                                                    onchange={handleBulkActionChange} required>
+                                                </lightning-combobox>
+                                            </div>
+                                            <template if:true={action.isApexType}>
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <lightning-combobox label={labels.apexClass}
+                                                                        value={action.apexClass}
+                                                                        options={apexClassOptions}
+                                                                        data-key={action.key}
+                                                                        data-field="apexClass"
+                                                                        onchange={handleBulkActionChange} required>
+                                                    </lightning-combobox>
+                                                </div>
+                                            </template>
+                                            <template if:true={action.isFlowType}>
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <lightning-combobox label={labels.flowApiName}
+                                                                        value={action.flowApiName}
+                                                                        options={flowOptions}
+                                                                        data-key={action.key}
+                                                                        data-field="flowApiName"
+                                                                        onchange={handleBulkActionChange} required>
+                                                    </lightning-combobox>
+                                                </div>
+                                            </template>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <lightning-input label={labels.iconName}
+                                                                 value={action.iconName}
+                                                                 data-key={action.key}
+                                                                 data-field="iconName"
+                                                                 onchange={handleBulkActionChange}>
+                                                </lightning-input>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <lightning-input type="number" label={labels.order}
+                                                                 value={action.order}
+                                                                 data-key={action.key}
+                                                                 data-field="order"
+                                                                 onchange={handleBulkActionChange}
+                                                                 min="1" required>
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text={labels.loading} size="medium"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

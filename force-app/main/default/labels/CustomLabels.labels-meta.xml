@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Dynamic Filter Search Component Labels -->
+    <labels>
+        <fullName>DFS_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dynamic Filter Search Title</shortDescription>
+        <value>Dynamic Search</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SearchConfiguration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Configuration label</shortDescription>
+        <value>Search Configuration</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectConfiguration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select a configuration placeholder</shortDescription>
+        <value>Select a configuration</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Search</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search button label</shortDescription>
+        <value>Search</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SearchAndSend</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search and Send button label</shortDescription>
+        <value>Search and Send</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Clear</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear button label</shortDescription>
+        <value>Clear</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ClearPastResults</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Past Results button</shortDescription>
+        <value>Clear Past Results</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectRange</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select range placeholder</shortDescription>
+        <value>Select range...</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_StartDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start date label</shortDescription>
+        <value>Start Date</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_EndDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End date label</shortDescription>
+        <value>End Date</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_StartTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start time label</shortDescription>
+        <value>Start Time</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_EndTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End time label</shortDescription>
+        <value>End Time</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Apply</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply button alt text</shortDescription>
+        <value>Apply</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ClearSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear selection alt text</shortDescription>
+        <value>Clear selection</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select placeholder for picklists</shortDescription>
+        <value>Select...</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Warning assistive text</shortDescription>
+        <value>Warning</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectConfigMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please select configuration message</shortDescription>
+        <value>Please select a search configuration.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Loading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Loading spinner alt text</shortDescription>
+        <value>Loading...</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_RecordsPerPage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Records per page label</shortDescription>
+        <value>Records per page</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Previous</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous page button</shortDescription>
+        <value>Previous</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_Next</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next page button</shortDescription>
+        <value>Next</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_PageOf</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Page X of Y pattern</shortDescription>
+        <value>Page {0} of {1}</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_NoResultsFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No records found message</shortDescription>
+        <value>No records found with the applied filters.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ApplyFiltersMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply filters and search message</shortDescription>
+        <value>Apply filters and click "Search" to see results.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ShowAdvancedSearch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show Advanced Search toggle</shortDescription>
+        <value>Advanced Search</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_HideAdvancedSearch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hide Advanced Search toggle</shortDescription>
+        <value>Hide Advanced Search</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SendToDispatcher</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send to Dispatcher button</shortDescription>
+        <value>Send to Dispatcher</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_RecordsFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Records found message</shortDescription>
+        <value>{0} record(s) found</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SeparatorSpace</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Separator space word</shortDescription>
+        <value>space</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SeparatorLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Separator label pattern</shortDescription>
+        <value>(separator {0})</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectConfigFirst</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select config first warning</shortDescription>
+        <value>Please select a configuration first.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_RecordsFoundToast</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Records found toast</shortDescription>
+        <value>{0} records found</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_FiltersCleared</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filters cleared toast</shortDescription>
+        <value>Filters cleared</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SelectAtLeastOneRecord</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select at least one record warning</shortDescription>
+        <value>Select at least one record to send to the Dispatcher.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_SentToDispatcher</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sent to dispatcher success</shortDescription>
+        <value>{0} Service Appointment(s) sent to Dispatcher.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ErrorSendingDispatcher</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error sending to dispatcher</shortDescription>
+        <value>Error sending to Dispatcher: {0}</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_NoRecordsToSend</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No records found to send</shortDescription>
+        <value>No records found to send.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_FoundAndSent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Found and sent to dispatcher</shortDescription>
+        <value>{0} Service Appointment(s) found and sent to Dispatcher.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ErrorSearchAndSend</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error in search and send</shortDescription>
+        <value>Error in search and send: {0}</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ClearedFromDispatcher</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cleared from dispatcher</shortDescription>
+        <value>{0} Service Appointment(s) cleared from Dispatcher.</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <labels>
+        <fullName>DFS_ErrorClearing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error clearing</shortDescription>
+        <value>Error clearing: {0}</value>
+        <categories>DynamicFilterSearch</categories>
+    </labels>
+    <!-- Filter Configuration Builder Labels -->
+    <labels>
+        <fullName>FCB_FilterConfigurations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter Configurations title</shortDescription>
+        <value>Filter Configurations</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_NewConfiguration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Configuration button</shortDescription>
+        <value>New Configuration</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name column header</shortDescription>
+        <value>Name</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label column header</shortDescription>
+        <value>Label</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Object</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object column header</shortDescription>
+        <value>Object</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Active</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Active column header</shortDescription>
+        <value>Active</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Actions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Actions column header</shortDescription>
+        <value>Actions</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Edit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit menu item</shortDescription>
+        <value>Edit</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Delete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete menu item</shortDescription>
+        <value>Delete</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_NoConfigurations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No configurations found message</shortDescription>
+        <value>No configurations found. Create your first configuration to get started.</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_NewConfigTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Configuration form title</shortDescription>
+        <value>New Configuration</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_EditConfigTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Configuration form title</shortDescription>
+        <value>Edit Configuration</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Back</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back button</shortDescription>
+        <value>Back</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Save</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save button</shortDescription>
+        <value>Save</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_BasicInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Basic Information section</shortDescription>
+        <value>Basic Information</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ConfigurationName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configuration Name field</shortDescription>
+        <value>Configuration Name</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_GridColumns</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Grid Columns field</shortDescription>
+        <value>Grid Columns</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ObjectAndFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object and Fields section</shortDescription>
+        <value>Object and Fields</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectObject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Object label</shortDescription>
+        <value>Select Object</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ChooseObject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choose an object placeholder</shortDescription>
+        <value>Choose an object</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Fields dual listbox</shortDescription>
+        <value>Select Fields</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_AvailableFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Fields label</shortDescription>
+        <value>Available Fields</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectedFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Selected Fields label</shortDescription>
+        <value>Selected Fields</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_AddFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Fields button</shortDescription>
+        <value>Add Fields</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ConfigureFilterFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configure Filter Fields section</shortDescription>
+        <value>Configure Filter Fields (Drag to Reorder)</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_MultiSearch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Multi-Search checkbox</shortDescription>
+        <value>Multi-Search</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SeparatorCharacter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Separator Character field</shortDescription>
+        <value>Separator Character</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SeparatorPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Separator placeholder</shortDescription>
+        <value>Space, comma, semicolon, etc.</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Remove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove button alt</shortDescription>
+        <value>Remove</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Prefilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prefilter section title</shortDescription>
+        <value>Prefilter (Optional)</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_EnablePrefilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enable Prefilter checkbox</shortDescription>
+        <value>Enable Prefilter</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_PrefilterField</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prefilter Field label</shortDescription>
+        <value>Prefilter Field (Picklist)</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectPicklistField</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select picklist field placeholder</shortDescription>
+        <value>Select a picklist field</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_PrefilterValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prefilter Values label</shortDescription>
+        <value>Prefilter Values</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_AvailableValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Values label</shortDescription>
+        <value>Available Values</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectedValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Selected Values label</shortDescription>
+        <value>Selected Values</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_BulkActions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bulk Actions section</shortDescription>
+        <value>Bulk Actions (Optional)</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_AddBulkAction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Bulk Action button</shortDescription>
+        <value>Add Bulk Action</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ActionLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Action Label field</shortDescription>
+        <value>Action Label</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ActionType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Action Type field</shortDescription>
+        <value>Action Type</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ApexClass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apex Class field</shortDescription>
+        <value>Apex Class</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_FlowApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow API Name field</shortDescription>
+        <value>Flow API Name</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_IconName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Icon Name field</shortDescription>
+        <value>Icon Name (e.g., utility:check)</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Order</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order field</shortDescription>
+        <value>Order</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_Loading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Loading alt text</shortDescription>
+        <value>Loading</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ConfirmDelete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm delete message</shortDescription>
+        <value>Are you sure you want to delete this configuration?</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ConfigDeleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Config deleted success</shortDescription>
+        <value>Configuration deleted successfully</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_ConfigSaved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Config saved success</shortDescription>
+        <value>Configuration saved successfully</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_NoFieldSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No FieldSet found message</shortDescription>
+        <value>FieldSet "DynamicSearch" not found on the selected object. Create it manually to select fields.</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectOneField</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select at least one field warning</shortDescription>
+        <value>Please select at least one field</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_EnterConfigName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enter config name error</shortDescription>
+        <value>Please enter a configuration name</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_EnterConfigLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enter config label error</shortDescription>
+        <value>Please enter a configuration label</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_SelectAnObject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select object error</shortDescription>
+        <value>Please select an object</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+    <labels>
+        <fullName>FCB_AddOneField</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add at least one field error</shortDescription>
+        <value>Please add at least one filter field</value>
+        <categories>FilterConfigBuilder</categories>
+    </labels>
+</CustomLabels>

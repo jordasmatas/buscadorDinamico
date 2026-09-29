@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Multi_Search__c</fullName>
+    <label>Is Multi Search</label>
+    <description>Indicates whether this field supports multiple search values separated by spaces</description>
+    <inlineHelpText>Check this box to allow users to enter multiple values separated by spaces (e.g., "SA-001 SA-002 SA-003"). The search will use OR logic.</inlineHelpText>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

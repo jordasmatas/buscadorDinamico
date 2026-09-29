@@ -1,0 +1,7 @@
+<aura:component access="global">
+    <c:dynamicFilterSearch
+        configurationName="ServiceTerritory"
+        embeddedMode="true"
+        title="Búsqueda avanzada">
+    </c:dynamicFilterSearch>
+</aura:component>
